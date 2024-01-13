@@ -50,6 +50,17 @@
   padding: 20px;
 }
 
+.clock__second{
+  position: absolute;
+  width: 25%;
+  /* scale: 0.05; */
+  top: 24px;
+  left: 53px;
+  transform-origin: 50% 95%;
+  transform: rotate(45deg) ;
+  color: red;
+
+}
 
 .clock__minute{
   position: absolute;
