@@ -12,6 +12,7 @@ interface Props {
 
 export default function Clock({watches, setWatches}: Props){
 
+    
 
     const delWatch = (event: React.MouseEvent<HTMLButtonElement>) => {
         setWatches(watches.filter(el => el.id != event.target.parentElement.id))
@@ -47,7 +48,7 @@ export default function Clock({watches, setWatches}: Props){
                 <img src={dial}/>
                 <img src={sec} className="clock__second" style={{transform: `rotate(${(el.time.second() - (watches.length - 1 ))*6 + "deg"})`}}/>
                 <img src={arrow} className="clock__minute" style={{transform: `rotate(${el.time.minute()*6 + "deg"})`}}/>
-                <img src={arrow} className="clock__hour" style={{transform: `rotate(${el.time.hour()*30 + "deg"})`}}/>
+                <img src={arrow} className="clock__hour" style={{transform: `rotate(${(el.time.hour() + el.time.minute()/60)*30 + "deg"})`}}/>
                 <button 
                     className="clock__close" 
                     onClick={delWatch}
